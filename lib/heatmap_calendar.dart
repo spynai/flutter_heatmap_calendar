@@ -25,7 +25,7 @@ class HeatMapCalendar extends StatefulWidget {
   /// Make sure to map starting on number 1, so the user might notice the difference between
   /// a day that had no input and one that had
   /// Example: {1: Colors.green[100], 20: Colors.green[200], 40: Colors.green[300]}
-  final Map<int, Color> colorThresholds;
+  final Map<int, Color?> colorThresholds;
 
   /// The size of each item of the calendar
   final double squareSize;
@@ -43,9 +43,9 @@ class HeatMapCalendar extends StatefulWidget {
   final double safetyMargin;
 
   const HeatMapCalendar(
-      {Key key,
-      @required this.input,
-      @required this.colorThresholds,
+      {Key? key,
+      required this.input,
+      required this.colorThresholds,
       this.weekDaysLabels: TimeUtils.defaultWeekLabels,
       this.monthsLabels: TimeUtils.defaultMonthsLabels,
       this.squareSize: 16,

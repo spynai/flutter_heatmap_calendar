@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
 class HeatMapDay extends StatelessWidget {
-  final int value;
-  final double size;
-  final Map<int, Color> thresholds;
+  final int? value;
+  final double? size;
+  final Map<int, Color?>? thresholds;
   final Color defaultColor;
-  final int currentDay;
+  final int? currentDay;
   final double opacity;
   final Duration animationDuration;
   final Color textColor;
-  final FontWeight fontWeight;
+  final FontWeight? fontWeight;
 
   const HeatMapDay(
-      {Key key,
+      {Key? key,
       this.value,
       this.size,
       this.thresholds,
@@ -28,11 +28,11 @@ class HeatMapDay extends StatelessWidget {
   ///
   /// If the [value] is greater than or equal one of [thresholds]' key,
   /// it will receive its value
-  Color getColorFromThreshold() {
-    Color color = defaultColor;
+  Color? getColorFromThreshold() {
+    Color? color = defaultColor;
     if (value != null) {
-      thresholds.forEach((mapKey, mapColor) {
-        if (value >= mapKey) {
+      thresholds!.forEach((mapKey, mapColor) {
+        if (value! >= mapKey) {
           color = mapColor;
         }
       });
